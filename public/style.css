@@ -1,0 +1,251 @@
+@font-face      {
+                 font-family: 'Font';
+                 src: url('Righteous-Regular.ttf') format('truetype');
+                 }
+
+body            {
+                 font-family: Font, sans-serif;
+                 background-image: url("hintergrund.jpg");
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-attachment: fixed;
+                 height: 100%;
+                 }
+                 
+h1              {
+                 font-size: 37px;
+                 font-style: italic;
+                 }
+                 
+h2              {
+                 font-size: 32px;
+                 }
+                 
+table           {
+                 border-spacing: 10px;
+                 margin-left: auto;
+                 margin-right: auto;
+                 }
+                 
+.link           {
+                 color: white;
+                 }
+                 
+.link5          {
+                 color: #ff8080;
+                 }
+                 
+.link6          {
+                 color: #ff4d4d;
+                 }
+                 
+.link7          {
+                 color: #ff0000;
+                 }
+
+.impressum      {
+                 color: white;
+                 font-size: 17px;
+                 text-align: center;
+                 }
+                 
+.ueberschrift   {
+                 color: #fe5000;
+                 background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.9) 50%, transparent 90%, transparent 100%);
+                 text-align: center;
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                 right: 0;
+                 z-index: -1;
+                 } 
+                             
+.btgj21         {
+                 color: white;
+                 font-size: 22px;
+                 background-color: #b33900;
+                 border-color: #b33900;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin-top: 90px;
+                 margin-left: 10px;
+                 margin-right: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.schueler1      {
+                 color: white;
+                 font-size: 17px;
+                 text-align: center;
+                 background-color: #cc4100;
+                 border-color: #cc4100;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 width: 148px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.btgj22         {
+                 color: white;
+                 font-size: 22px;
+                 background-color: #e64900;
+                 border-color: #e64900;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.schueler2      {
+                 color: white;
+                 font-size: 17px;
+                 text-align: center;
+                 background-color: #fe5000;
+                 border-color: #fe5000;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 width: 148px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.egj2           {
+                 color: white;
+                 font-size: 22px;
+                 background-color: #ff621a;
+                 border-color: #ff621a;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.schueler3      {
+                 color: white;
+                 font-size: 17px;
+                 text-align: center;
+                 background-color: #ff7433;
+                 border-color: #ff7433;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 width: 148px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.ggj2           {
+                 color: white;
+                 font-size: 22px;
+                 background-color: #ff854d;
+                 border-color: #ff854d;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.schueler4      {
+                 color: white;
+                 font-size: 17px;
+                 text-align: center;
+                 background-color: #ff9666;
+                 border-color: #ff9666;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 width: 148px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.sgj21          {
+                 color: #ffe6e6;
+                 font-size: 22px;
+                 background-color: #ffa880;
+                 border-color: #ffa880;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.schueler5      {
+                 color: white;
+                 font-size: 17px;
+                 text-align: center;
+                 background-color: #ffb999;
+                 border-color: #ffb999;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 width: 148px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 }
+                 
+.sgj22          {
+                 color: #ff6666;
+                 font-size: 22px;
+                 background-color: #ffcbb3;
+                 border-color: #ffcbb3;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.schueler6      {
+                 color: white;
+                 font-size: 17px;
+                 text-align: center;
+                 background-color: #ffdccc;
+                 border-color: #ffdccc;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 width: 148px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 }
+                 
+.sgj23          {
+                 color: #fe5000;
+                 font-size: 22px;
+                 background-color: #ffeee6;
+                 border-color: #ffeee6;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin: 10px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 } 
+                 
+.schueler7      {
+                 color: #fe5000;
+                 font-size: 17px;
+                 text-align: center;
+                 background-color: #ffffff;
+                 border-color: #ffffff;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 width: 148px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 }
+                 
+.kommentar      {
+                 color: #fe5000;
+                 font-size: 18px;
+                 background-color: white;
+                 border-color: white;
+                 border-width: 17px;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 margin: 20px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 }
+                 

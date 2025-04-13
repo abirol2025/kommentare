@@ -1,0 +1,15 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Regel für die Sammlung "comments"
+    match /comments/{commentId} {
+      // Jeder kann Kommentare lesen und schreiben
+      allow read, write: if true;
+    }
+    
+    // Standardregel für alle anderen Dokumente: niemand kann lesen oder schreiben
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

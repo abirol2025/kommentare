@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Joanina Alves</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+  // Kommentar absenden und in Firebase speichern
+  document.getElementById('submitComment').addEventListener('click', () => {
+    const comment = document.getElementById('commentInput').value;
+    const studentId = "student1";  // Ersetze dies durch die ID des aktuellen Schülers
+    const commentsRef = db.collection('students').doc(studentId).collection('comments');
+    
+    // Kommentar in Firebase speichern
+    commentsRef.add({
+      comment: comment,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    })
+    .then(() => {
+      console.log('Kommentar erfolgreich hinzugefügt!');
+      document.getElementById('commentInput').value = '';  // Eingabefeld leeren
+      loadComments();  // Kommentare neu laden
+    })
+    .catch((error) => {
+      console.error('Fehler beim Hinzufügen des Kommentars: ', error);
+    });
+  });
+</script>
+</head>
+
+<body>
+    <div class = "ueberschrift">
+        <h1>
+        Joanina Alves
+        </h1>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <br><br><br><br><br>
+    
+    <div class = "kommentar" id="commentsContainer"></div>
+    
+    
+    <div>
+        <textarea id = "commentInput" placeholder = "Kommentar eingeben"></textarea>
+        <input type="text" id="nameInput" placeholder="Dein Name" />
+        <button id = "submitComment">Kommentar absenden</button>
+    </div>
+    
+    <br>
+    
+    <div class="impressum">
+        <a href="index.html" style="text-decoration: none" class = "link">
+        - Zurück -
+        </a>
+    </div>
+
+</body>
+
+</html>
+
