@@ -14,3 +14,4 @@ detailsElements.forEach((detail) => {
     });
 });
 // JavaScript Document
+

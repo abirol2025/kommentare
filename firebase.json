@@ -1,20 +1,7 @@
 {
   "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+    "site": "abirol-2025",  // Deine Hosting-Seite
+    "public": "public",     // Der Ordner, der deine statischen Dateien enthält
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
