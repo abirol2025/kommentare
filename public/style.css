@@ -23,8 +23,8 @@ h2              {
                  
 table           {
                  border-spacing: 10px;
-                 margin-left: auto;
-                 margin-right: auto;
+                 width: 95%; /* oder 100% wenn's ganz breit sein soll */
+                 margin: 0 auto;
                  }
                  
 .link           {
@@ -238,14 +238,59 @@ table           {
                  }
                  
 .kommentar      {
-                 color: #fe5000;
-                 font-size: 18px;
-                 background-color: white;
-                 border-color: white;
+                 color: #ff7433;
+                 font-size: 14px;
+                 background-color: rgba(255, 255, 255, 0.7);
+                 border-color: rgba(255, 255, 255, 0);
                  border-width: 17px;
                  border-style: solid;
-                 border-radius: 0.18em;
-                 margin: 20px;
+                 width: 90%; /* oder was du magst */
+                 margin: 0 auto; /* zentriert horizontal */
                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
                  }
                  
+.eingeben1      {
+                 font-family: Font;
+
+                 color: #fe5000;
+                 font-size: 14px;
+                 text-align: center;
+                 background-color: white;
+                 border-color: white;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 border-width: 10px;
+                 width: 100%;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 box-sizing: border-box;
+                 } 
+                 
+.eingeben2      {
+                 font-family: Font;
+                 color: #fe5000;
+                 font-size: 16px;
+                 text-align: center;
+                 background-color: white;
+                 border-color: white;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 border-width: 10px;
+                 height: 67px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 box-sizing: border-box;
+                 } 
+                 
+.eingeben3      {
+                 font-family: Font;
+                 color: white;
+                 font-size: 16px;
+                 text-align: center;
+                 background-color: #fe5000;
+                 border-color: #fe5000;
+                 border-style: solid;
+                 border-radius: 0.18em;
+                 border-width: 10px;
+                 height: 67px;
+                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+                 box-sizing: border-box;
+                 } 

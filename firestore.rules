@@ -1,15 +1,15 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // Regel für die Sammlung "comments"
-    match /comments/{commentId} {
-      // Jeder kann Kommentare lesen und schreiben
+
+    // Zugriff auf Kommentare unterhalb jedes Schülers erlauben
+    match /schueler/{schuelerId}/kommentare/{commentId} {
       allow read, write: if true;
     }
-    
-    // Standardregel für alle anderen Dokumente: niemand kann lesen oder schreiben
+
+    // Alles andere ist gesperrt
     match /{document=**} {
       allow read, write: if false;
     }
   }
 }
+
