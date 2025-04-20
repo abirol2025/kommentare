@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Madeleine Müller</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class = "ueberschrift">
+        <h1>Madeleine Müller</h1>
+        <br><br><br><br>
+    </div>
+    <br><br><br><br><br><br>
+    
+    <div class="kommentar" id="commentsContainer"></div>
+    <br>
+    
+    <table>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <div>
+                    <textarea class = "eingeben1" id="commentInput" placeholder="Kommentar eingeben" rows="6"></textarea>
+                </div>
+            </td>    
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <div>
+                    <input class = "eingeben2" type="text" id="nameInput" placeholder="Dein Name" />
+                </div>
+            </td>
+            <td style="text-align: center;">
+                <div>
+                    <button class = "eingeben3" id="submitComment">Kommentar absenden</button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <br>
+                <div class = "impressum">
+                    <a href="index.html" style="text-decoration: none" class="link">- Zurück -</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Firebase-Konfiguration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAQA70iIG7sK2yTN95E6pzPi36esuWg1Dc",
+            authDomain: "abirol-2025.firebaseapp.com",
+            projectId: "abirol-2025",
+            storageBucket: "abirol-2025.firebasestorage.app",
+            messagingSenderId: "699802954860",
+            appId: "1:699802954860:web:14d6877fa40097f31afc49",
+            measurementId: "G-7ZNNJ70L1K"
+            };
+
+        // Firebase initialisieren
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Beispiel: Die Schüler-ID, die von der URL oder einer anderen Quelle kommt
+        const schuelerId = "egj2_madeleine_mueller";  // Dies kannst du dynamisch setzen, z.B. aus der URL
+
+        const commentInput = document.getElementById("commentInput");
+        const submitCommentButton = document.getElementById("submitComment");
+        const commentsContainer = document.getElementById("commentsContainer");
+
+        // Kommentarfunktion: Kommentar speichern
+        submitCommentButton.addEventListener("click", async (e) => {
+            e.preventDefault();  // Verhindert das Standardverhalten des Buttons (z.B. Form-Submit)
+
+            const comment = commentInput.value.trim();
+            const name = document.getElementById("nameInput").value.trim();  // Optional, wenn du den Namen speichern möchtest
+
+            if (comment) {
+                try {
+                    // Kommentar in der Schüler-Sammlung speichern
+                    await db.collection("schueler")
+                        .doc(schuelerId)  // Zugriff auf das Dokument des spezifischen Schülers
+                        .collection("kommentare")  // Unter-Sammlung für Kommentare
+                        .add({
+                            text: comment,
+                            name: name || "Anonym",  // Fallback auf "Anonym", wenn kein Name angegeben wurde
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                    commentInput.value = "";  // Eingabefeld zurücksetzen
+                } catch (error) {
+                    console.error("Fehler beim Speichern des Kommentars:", error);
+                }
+            }
+        });
+
+        // Funktion zum Laden der Kommentare des Schülers
+        const loadComments = () => {
+            db.collection("schueler")
+                .doc(schuelerId)  // Zugriff auf das Dokument des spezifischen Schülers
+                .collection("kommentare")  // Unter-Sammlung für Kommentare
+                .orderBy("timestamp", "desc")  // Kommentare nach Zeitstempel absteigend sortieren
+                .onSnapshot((snapshot) => {
+                    commentsContainer.innerHTML = "";  // Container leeren
+                    snapshot.forEach((doc) => {
+                        const comment = doc.data().text;
+                        const name = doc.data().name;
+                        const commentDiv = document.createElement("div");
+                        commentDiv.classList.add("comment");
+                        commentDiv.innerHTML = `<strong>${name}</strong>: ${comment}`;
+                        commentsContainer.appendChild(commentDiv);
+                    });
+                });
+        };
+
+        // Kommentare laden, wenn die Seite geladen wird
+        loadComments();
+    </script>
+
+</body>
+
+</html>
+
+
+
